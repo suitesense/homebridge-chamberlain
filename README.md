@@ -15,6 +15,7 @@ the `accessories` array:
 ```
 
 If you have multiple garage doors, the plugin will throw an error and list the controllable device IDs. Use those IDs to create individual accessories...
+If one of the devices is a MyQ Light adapter, just pass "isLight": true so it is not treated as a garage door
 
 ```json
 {
@@ -22,14 +23,16 @@ If you have multiple garage doors, the plugin will throw an error and list the c
   "name": "Main Garage Door",
   "username": "your mychamberlain.com email",
   "password": "your mychamberlain.com password",
-  "deviceId": "xxx"
+  "deviceId": "xxx",
+  "isLight": true
 },
 {
   "accessory": "Chamberlain",
   "name": "Side Garage Door",
   "username": "your mychamberlain.com email",
   "password": "your mychamberlain.com password",
-  "deviceId": "xxx"
+  "deviceId": "xxx",
+  "isLight": false
 },
 ...
 ```
