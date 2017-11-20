@@ -24,7 +24,7 @@ If one of the devices is a MyQ Light adapter, just pass "isLight": true so it is
   "username": "your mychamberlain.com email",
   "password": "your mychamberlain.com password",
   "deviceId": "xxx",
-  "isLight": true
+  "isLight": false
 },
 {
   "accessory": "Chamberlain",
@@ -33,6 +33,15 @@ If one of the devices is a MyQ Light adapter, just pass "isLight": true so it is
   "password": "your mychamberlain.com password",
   "deviceId": "xxx",
   "isLight": false
+},
+,
+{
+  "accessory": "Chamberlain",
+  "name": "Lamp 1",
+  "username": "your mychamberlain.com email",
+  "password": "your mychamberlain.com password",
+  "deviceId": "xxx",
+  "isLight": true
 },
 ...
 ```
