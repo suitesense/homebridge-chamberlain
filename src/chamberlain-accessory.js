@@ -117,7 +117,7 @@ module.exports = class {
     if (this.reactiveSetTargetDoorState) return cb();
 
     value = this.hapToApi[value];
-    return this.api.setDeviceAttribute({name: 'desireddoorstate', value})
+    return this.api.setDeviceAttribute({name: 'desireddoorstate', value: value})
       .then(() => {
         this.poll();
         cb();
@@ -127,13 +127,12 @@ module.exports = class {
 
   getCurrentLightState(cb) {
     return this.api.getDeviceAttribute({name: 'lightstate'})
-      .then(value => cb(null, this.apiToHap[value?0:1]))
+      .then(value => cb(null, value==1))
       .catch(this.getErrorHandler(cb));
   }
 
   setTargetLightState(value, cb) {
-    value = this.hapToApi[value?0:1];
-    return this.api.setDeviceAttribute({name: 'desiredlightstate', value})
+    return this.api.setDeviceAttribute({name: 'desiredlightstate', value:value==true?1:0})
       .then(() => {
         cb();
       })
